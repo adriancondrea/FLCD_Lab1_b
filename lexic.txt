@@ -1,0 +1,50 @@
+Student: Condrea Adrian
+Lab 1b
+Lexic.txt
+
+Specification of the programming language
+
+Alphabet:
+letter = (“a”, “b”, …, “z”, “A”, “B”, …, “Z”);
+underline =  ‘_’;
+digit = (“0”, “1”, …, “9”);
+
+The lexic of the programming language contains:
+
+Special symbols:
+operator = (“+”, “-“, “*”, “/“, “<=“, “>=“, “==“, “!=“, “<“, “>”, “%”, “!”);
+separator = (“[“, “]”, “(“, “)”, “<“, “>”, “,”, “\””, “’”, “ “, “\n”, “.”);
+
+Reserved words:
+reservedWords = “startProgram”, “input”, “declare”, “typeCheck”, “typeDefine”, “check”, “else”, “output”, “endProgram”, “assign”, “loop”, “breakLoop”, “integer”, “boolean”, “string”, “char”, “array”;
+
+Identifiers
+Are a sequence of letters and digits. 
+
+Identifier rules:
+An identifier consists of a letter or a sequence of any letters, digits, or underline 
+The first character is always a letter
+The number of characters is <= 256
+Identifiers can not be the same as reserved words
+
+identifier = letter | letter, {( letter, digit, underline)};
+letter = (“a”, “b”, …, “z”, “A”, “B”, …, “Z”);
+digit = (“0”, “1”, …, “9”);
+underline = “_”;
+
+Constants
+Integer - rule:
+noConst = “0” | (“+”, “-“),digit - “0”, {digit};
+
+Boolean - rule: boolConst = (“true”, “false”);
+
+Char - rule:
+charConst = “’“, (letter, digit, underline, separator), “’“;
+
+String - const:
+stringConst =“”“, {charConst}, “”“;
+
+Array -const:
+arrayConst = “[“, ({noConst}, {charConst}, {stringConst}, {boolConst}), “]”;
+
+const = (noConst, boolConst, charConst, stringConst, arrayConst);
