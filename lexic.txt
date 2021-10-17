@@ -8,6 +8,7 @@ Alphabet:
 letter = (“a”, “b”, …, “z”, “A”, “B”, …, “Z”);
 underline =  ‘_’;
 digit = (“0”, “1”, …, “9”);
+nonZeroDigit = ("1", "2", ..., "9");
 
 The lexic of the programming language contains:
 
@@ -34,9 +35,9 @@ underline = “_”;
 
 Constants
 Integer - rule:
-noConst = “0” | (“+”, “-“),digit - “0”, {digit};
+noConst = “0” | [“-“], nonZeroDigit, {digit};
 
-Boolean - rule: boolConst = (“true”, “false”);
+Boolean - rule: boolConst = (“true”, “false”);
 
 Char - rule:
 charConst = “’“, (letter, digit, underline, separator), “’“;
